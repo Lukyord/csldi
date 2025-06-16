@@ -9,7 +9,7 @@
 
     <section data-section="index-hero">
         <div class="sc-billboard full-screen">
-            <div class="swiper auto fade autoplay" data-autoplay-interval="6000">
+            <div class="swiper auto fade autoplay" data-autoplay-interval="6000" data-autoplay-delay="4000">
                 <div class="swiper-wrapper">
                     <?php
                     for ($i = 1; $i <= 6; $i++) {
@@ -84,7 +84,7 @@
                     ?>
 
                     <div class="content-text">
-                        <div class="content-ttl">
+                        <div class="content-ttl animate fadeIn">
                             <h2>AWARD WINNING
                                 <br> PROJECTS
                             </h2>
@@ -95,7 +95,7 @@
                                 <?php
                                 foreach ($awards as $award) {
                                 ?>
-                                    <li>
+                                    <li class="animate fadeIn">
                                         <a href="#<?php echo $award["id"]; ?>" data-marker="<?php echo $award["id"]; ?>" class="content-marker-item link-scroll">
                                             <span class="content-marker-year"><?php echo $award["year"]; ?></span>
                                             <span class="content-marker-name"><?php echo $award["project-name"]; ?></span>
@@ -104,7 +104,9 @@
                                 <?php } ?>
                             </ul>
 
-                            <a href="<?php echo $root; ?>award.php" class="button secondary">EXPLORE MORE</a>
+                            <div class="pc-cta animate fadeIn">
+                                <a href="<?php echo $root; ?>award.php" class="button secondary">EXPLORE MORE</a>
+                            </div>
                         </div>
                     </div>
 
@@ -114,7 +116,9 @@
                         } ?>
                     </div>
 
-                    <a href="<?php echo $root; ?>award.php" class="button secondary hidden-device-md">EXPLORE MORE</a>
+                    <div class="mobile-cta hidden-device-md animate fadeIn">
+                        <a href="<?php echo $root; ?>award.php" class="button secondary">EXPLORE MORE</a>
+                    </div>
 
                 </div>
             </div>

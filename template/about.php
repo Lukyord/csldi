@@ -33,7 +33,7 @@
                     </div>
 
                     <div class="block" data-block-index="1">
-                        <div class="block-media animate fadeIns">
+                        <div class="block-media animate fadeIn">
                             <?php
                             $section_cover = "./assets/media/design/about-1.jpg";
                             $section_cover_m = "";
@@ -85,7 +85,7 @@
                     </div>
 
                     <div class="block" data-block-index="3">
-                        <div class="block-media">
+                        <div class="block-media animate fadeIn">
                             <?php
                             $section_cover = "./assets/media/design/about-3.jpg";
                             $section_cover_m = "./assets/media/design/about-3-mb.jpg";

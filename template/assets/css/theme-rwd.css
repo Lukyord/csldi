@@ -227,6 +227,7 @@
     .header-menu .submenu {
         margin-top: var(--spacing-2sm);
         position: static;
+        pointer-events: auto;
         padding: 0 var(--spacing-2sm);
         grid-gap: var(--spacing-2sm);
         color: var(--color-gray-dark);
@@ -317,6 +318,10 @@
 
     .contact .contact-info {
         grid-column: 3 / 5;
+    }
+
+    .footer-nav .copy-right {
+        margin-top: 0;
     }
 
     /* COMPONENT */
@@ -426,7 +431,7 @@
 
     [data-section="about"] [data-block-index="2"] .block-media {
         width: 67.6923076923vw;
-        justify-self: center;
+        margin: 0 auto;
     }
 
     [data-section="about"] [data-block-index="3"] .block-media {
@@ -501,7 +506,7 @@
         width: 100%;
     }
 
-    [data-section="projects"] .-content {
+    [data-section="projects"] .popup-content {
         width: 100%;
     }
 
@@ -554,7 +559,11 @@
         width: 100vw;
     }
 
-    [data-section="project-single"] .project-gallery .project-image .object-fit > *:is(img, video, iframe) {
+    [data-section="project-single"]
+        .project-gallery
+        .project-image
+        .object-fit
+        > *:is(img, video, iframe) {
         width: 100%;
         height: 100%;
         position: absolute;
@@ -572,10 +581,14 @@
         top: unset;
         bottom: 0;
         box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
-        transform: translateY(calc(var(--font-size-button) * var(--line-height-button) / 2));
+        transform: translateY(
+            calc(var(--font-size-button) * var(--line-height-button) / 2)
+        );
     }
 
-    [data-section="project-single"] .project-gallery [class*="swiper-button-"]:after {
+    [data-section="project-single"]
+        .project-gallery
+        [class*="swiper-button-"]:after {
         color: var(--color-purple);
     }
 
@@ -655,10 +668,14 @@
         top: unset;
         bottom: 0;
         box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
-        transform: translateY(calc(var(--font-size-button) * var(--line-height-button) / 2));
+        transform: translateY(
+            calc(var(--font-size-button) * var(--line-height-button) / 2)
+        );
     }
 
-    [data-section="press-single"] .content-gallery [class*="swiper-button-"]:after {
+    [data-section="press-single"]
+        .content-gallery
+        [class*="swiper-button-"]:after {
         color: var(--color-purple);
     }
 

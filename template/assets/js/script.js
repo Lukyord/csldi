@@ -5,13 +5,27 @@ jQuery(document).ready(function ($) {
         history.scrollRestoration = "manual";
     }
 
-    // Force scroll to top
-    $("html, body").scrollTop(0);
+    function scrollToTop() {
+        // Try both window.scrollTo and jQuery scrollTop
+        window.scrollTo(0, 0);
+        $("html, body").scrollTop(0);
+
+        // If using Lenis, try to scroll with it
+        if (window.lenis) {
+            window.lenis.scrollTo(0, { immediate: true });
+        }
+    }
+
+    // Initial scroll
+    scrollToTop();
 
     // Backup scroll after a short delay
-    setTimeout(function () {
-        $("html, body").scrollTop(0);
-    }, 100);
+    setTimeout(scrollToTop, 100);
+
+    // Final backup scroll after everything is loaded
+    $(window).on("load", function () {
+        setTimeout(scrollToTop, 500);
+    });
 });
 
 /*::* INDEX LANDING *::*/
@@ -20,10 +34,10 @@ jQuery(document).ready(function ($) {
     const $header = $("#header");
 
     function handleLandingAnimation() {
-        $(window).on("load", function () {
-            $("html").addClass("no-scroll");
-
+        // Function to start the animation sequence
+        function startAnimation() {
             $header.addClass("hide-elements");
+            $("html").addClass("no-scroll");
 
             setTimeout(() => {
                 $landing.addClass("letter-in");
@@ -33,11 +47,24 @@ jQuery(document).ready(function ($) {
                         $(this).remove();
                         $("html").removeClass("no-scroll");
                         $header.removeClass("hide-elements");
-                        $(".cky-consent-container").addClass("slideInFromRight");
+                        $(".cky-consent-container").addClass(
+                            "slideInFromRight"
+                        );
                     });
                 }, 3500);
             }, 500);
-        });
+        }
+
+        // Check if document is already loaded
+        if (document.readyState === "complete") {
+            startAnimation();
+        } else {
+            // Listen for load event
+            $(window).on("load", startAnimation);
+
+            // Fallback timeout in case load event doesn't fire
+            setTimeout(startAnimation, 2000);
+        }
     }
 
     if ($landing.length) {
@@ -49,7 +76,13 @@ jQuery(document).ready(function ($) {
 jQuery(document).ready(function ($) {
     // Function to initialize marker tracking
     function initMarkerTracking(options = {}) {
-        const { sectionSelector, markerSelector, cardSelector, threshold, rootMargin } = options;
+        const {
+            sectionSelector,
+            markerSelector,
+            cardSelector,
+            threshold,
+            rootMargin,
+        } = options;
 
         if (!$(sectionSelector).length) return;
 
@@ -61,7 +94,9 @@ jQuery(document).ready(function ($) {
             (entries) => {
                 entries.forEach((entry) => {
                     const cardId = entry.target.id;
-                    const $marker = $(`${markerSelector}[data-marker="${cardId}"]`);
+                    const $marker = $(
+                        `${markerSelector}[data-marker="${cardId}"]`
+                    );
 
                     if (entry.isIntersecting) {
                         $markerItems.removeClass("active");
@@ -102,7 +137,9 @@ jQuery(document).ready(function ($) {
     if (!$('[data-section="index-press"]').length) return;
     const indexPress = document.querySelector('[data-section="index-press"]');
 
-    const contentText = document.querySelector('[data-section="index-press"] .content-text');
+    const contentText = document.querySelector(
+        '[data-section="index-press"] .content-text'
+    );
     const blockContent = contentText.querySelector(".block-content-start");
 
     onWindowResizeInstant(() => {
@@ -113,7 +150,10 @@ jQuery(document).ready(function ($) {
         const relativeBottom = contentTextRect.bottom - blockContentRect.bottom;
 
         indexPress.style.setProperty("--relative-right", `${relativeRight}px`);
-        indexPress.style.setProperty("--relative-bottom", `${relativeBottom}px`);
+        indexPress.style.setProperty(
+            "--relative-bottom",
+            `${relativeBottom}px`
+        );
     });
 });
 

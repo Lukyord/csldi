@@ -55,7 +55,7 @@
                 </div>
 
                 <div class="project-gallery">
-                    <div class="swiper auto centered centered-m" data-initial-slide="1">
+                    <div class="swiper auto autoplay centered centered-m" data-autoplay-interval="6000" data-initial-slide="1">
                         <div class="swiper-wrapper">
                             <?php
                             for ($i = 1; $i <= 4; $i++) {
