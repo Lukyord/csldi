@@ -24,7 +24,7 @@
     max-width: 100% !important;
     box-shadow: none !important;
     border: 0 !important;
-    background: var(--color-white) !important;
+    background: rgba(var(--color-white-rgb), 0.75) !important;
     color: var(--color-black) !important;
     font-family: var(--font-body) !important;
     font-weight: var(--font-weight-body) !important;
@@ -177,7 +177,7 @@
 
 @media (min-width: 576px) {
     .cky-consent-container {
-        width: max(36.3rem, 25.2083333333vw) !important;
+        width: clamp(34.3rem, 23.8194444444vw, 51.45rem) !important;
     }
 }
 @media (max-width: 440px) {

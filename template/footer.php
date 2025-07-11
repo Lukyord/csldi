@@ -77,7 +77,7 @@
         </ul>
 
         <div class="copy-right" data-block-index="9">
-            <p>© csldi.com All Rights Reserved. | Web by <a href="https://www.csldi.com" target="_blank">CSLDI</a></p>
+            <p>© csldi.com All Rights Reserved. | Web by <a href="https://www.csldi.com" target="_blank">::*</a></p>
         </div>
     </div>
 </footer>
