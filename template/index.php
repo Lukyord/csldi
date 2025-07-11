@@ -37,6 +37,7 @@
                     $awards = [
                         [
                             "id" => "award-1",
+                            "link" => $root . "project-single.php",
                             "year" => "2024",
                             "award" => "Honorable Mention | 2024 LIT Lighting Design Awards",
                             "project-name" => "ROCKWELL BRIDGE",
@@ -46,6 +47,7 @@
                         ],
                         [
                             "id" => "award-2",
+                            "link" => $root . "project-single.php",
                             "year" => "2024",
                             "award" => "Honorable Mention | 2024 LIT Lighting Design Awards",
                             "project-name" => "PROSCENIUM AT ROCKWELL",
@@ -55,6 +57,7 @@
                         ],
                         [
                             "id" => "award-3",
+                            "link" => $root . "project-single.php",
                             "year" => "2024",
                             "award" => "LIT Lighting Design Award Winner - Residential Lighting Design",
                             "project-name" => "SAMSUNG PERFORMING ARTS",
@@ -64,6 +67,7 @@
                         ],
                         [
                             "id" => "award-4",
+                            "link" => $root . "project-single.php",
                             "year" => "2023",
                             "award" => "Winner in Religious & Spiritual Site Lighting",
                             "project-name" => "AYALA GREENBELT 3 MALL",
@@ -73,6 +77,7 @@
                         ],
                         [
                             "id" => "award-5",
+                            "link" => $root . "project-single.php",
                             "year" => "2023",
                             "award" => "Honorable Mention in Innovative Materials",
                             "project-name" => "A & J GONZAGA RESIDENCE",
