@@ -2,7 +2,7 @@
     <div class="cover">
         <?php
         $section_cover = "./assets/media/design/wave-video.mp4";
-        $section_cover_m = "";
+        $section_cover_m = "./assets/media/design/wave-video-mb.mp4";
         include("include/function-group.php");
         ?>
     </div>
